@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "*",
+  origin: "https://morrent2.onrender.com/",
   credentials: true
 }));
 
@@ -29,14 +29,9 @@ app.use('/api/cars', carRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use(express.static(path.join(_dirname , "/Frontend/dist")))
-if (process.env.NODE_ENV === "Production") {
-
-    app.use(express.static(path.join(__dirname, "../Frontend/dist")));
-
-    app.get("*all", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../Frontend", "dist", "index.html"));
-    });
-}
+app.get("*all",(req,res)=>{
+  res.sendFile(path.resolve(_dirname , "Frontend", "dist", "index.html"))
+})
 
 
 
