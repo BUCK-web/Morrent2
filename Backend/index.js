@@ -29,7 +29,7 @@ app.use('/api/cars', carRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use(express.static(path.join(_dirname , "/Frontend/dist")))
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "Production") {
 
     app.use(express.static(path.join(__dirname, "../Frontend/dist")));
 
