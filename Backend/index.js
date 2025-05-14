@@ -15,7 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // Match your React dev URL
+  origin: "https://morrent2.onrender.com", // Match your React dev URL
   credentials: true
 }));
 
