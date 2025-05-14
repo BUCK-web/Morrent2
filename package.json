@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon backend/index.js",
-    "build": "npm install && npm install --prefix Frontend && npm run build --prefix Frontend ",
-    "start": "node backend/index.js"
-  },
+"scripts": {
+  "dev": "node index.js",
+  "build": "npm install && npm install --prefix Frontend && npm run build --prefix Frontend",
+  "start": "node index.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
