@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "https://morrent2.onrender.com/",
+  origin: "*",
   credentials: true
 }));
 
