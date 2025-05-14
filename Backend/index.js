@@ -29,9 +29,14 @@ app.use('/api/cars', carRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use(express.static(path.join(_dirname , "/Frontend/dist")))
-app.get("*all",(req,res)=>{
-  res.sendFile(path.resolve(_dirname , "Frontend", "dist", "index.html"))
-})
+if (process.env.NODE_ENV === "production") {
+
+    app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+
+    app.get("*all", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "../Frontend", "dist", "index.html"));
+    });
+}
 
 
 
