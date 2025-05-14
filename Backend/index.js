@@ -13,11 +13,11 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors({
-  origin: "https://morrent2.onrender.com",
+  origin: "https://morrent2.onrender.com/",
   credentials: true
 }));
+
 
 
 app.use(express.json());
