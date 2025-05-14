@@ -20,7 +20,7 @@ const useCarsStore = create((set, get) => ({
     fetchPopularCars: async () => {
         try {
             set({ loading: true, error: null })
-            const response = await axios.get('http://localhost:5000/api/cars/popular')
+            const response = await axiosInstance.get('/cars/popular')
             const formattedCars = response.data.map(car => ({
                 id: car._id,
                 name: car.name,
@@ -55,7 +55,7 @@ const useCarsStore = create((set, get) => ({
     fetchRecommendedCars: async () => {
         try {
             set({ loading: true, error: null })
-            const response = await axios.get('http://localhost:5000/api/cars/recommended')
+            const response = await axiosInstance.get('/cars/recommended')
             const formattedCars = response.data.map(car => ({
                 id: car._id,
                 name: car.name,
